@@ -443,7 +443,7 @@ export default function App() {
                 </div>
               </div>
               <div>
-                <h2 className="text-4xl lg:text-5xl font-black tracking-tighter drop-shadow-lg mb-2">฿{balance.toLocaleString()}</h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter drop-shadow-lg mb-2 truncate">฿{balance.toLocaleString()}</h2>
                 <div className="text-indigo-200/80 dark:text-indigo-300/60 text-sm tracking-[0.2em] font-medium flex gap-5 mt-4">
                   <span>****</span><span>****</span><span>****</span><span>5678</span>
                 </div>
@@ -456,7 +456,7 @@ export default function App() {
               <h3 className="text-slate-500 dark:text-slate-400 font-bold text-sm tracking-wide">รับแล้วเดือนนี้</h3>
               <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400"><ArrowUpRight size={20} strokeWidth={3} /></div>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-black text-emerald-600 dark:text-emerald-400 mt-2">+{totalIncome.toLocaleString()}</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-emerald-600 dark:text-emerald-400 mt-2 truncate">+{totalIncome.toLocaleString()}</h2>
             <div className="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full mt-5 overflow-hidden"><div className="bg-emerald-500 dark:bg-emerald-400 h-full rounded-full" style={{ width: `${incomePercent}%` }}></div></div>
           </div>
 
@@ -465,7 +465,7 @@ export default function App() {
               <h3 className="text-slate-500 dark:text-slate-400 font-bold text-sm tracking-wide">จ่ายแล้วเดือนนี้</h3>
               <div className="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-500/10 flex items-center justify-center text-rose-600 dark:text-rose-400"><ArrowDownRight size={20} strokeWidth={3} /></div>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-black text-rose-600 dark:text-rose-400 mt-2">-{totalExpense.toLocaleString()}</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-rose-600 dark:text-rose-400 mt-2 truncate">-{totalExpense.toLocaleString()}</h2>
             <div className="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full mt-5 overflow-hidden"><div className="bg-rose-500 dark:bg-rose-400 h-full rounded-full" style={{ width: `${expensePercent}%` }}></div></div>
           </div>
         </div>
@@ -540,9 +540,9 @@ export default function App() {
                 <div>
                   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">รายการเดินบัญชี</h3>
                   {/* Date Range Filter Panel with Summary */}
-                  <div className="flex flex-wrap lg:flex-nowrap items-center gap-3 mt-4 bg-slate-50/50 dark:bg-slate-900/20 p-2 rounded-2xl border border-slate-100 dark:border-slate-800/60 w-fit">
-                    <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 shrink-0">
-                      <div className="flex items-center gap-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 rounded-xl px-3 py-1.5 shadow-sm">
+                  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-3 mt-4 bg-slate-50/50 dark:bg-slate-900/20 p-2 rounded-2xl border border-slate-100 dark:border-slate-800/60 w-full lg:w-fit">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 shrink-0 w-full lg:w-auto">
+                      <div className="flex items-center justify-between sm:justify-start gap-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 rounded-xl px-3 py-1.5 shadow-sm w-full sm:w-auto">
                         <span className="text-xs font-bold text-slate-500 dark:text-slate-400">เริ่ม:</span>
                         <input 
                           type="date" 
@@ -552,7 +552,7 @@ export default function App() {
                         />
                       </div>
                       <span className="text-slate-300 dark:text-slate-600 font-black hidden sm:block">-</span>
-                      <div className="flex items-center gap-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 rounded-xl px-3 py-1.5 shadow-sm">
+                      <div className="flex items-center justify-between sm:justify-start gap-2 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 rounded-xl px-3 py-1.5 shadow-sm w-full sm:w-auto">
                         <span className="text-xs font-bold text-slate-500 dark:text-slate-400">ถึง:</span>
                         <input 
                           type="date" 
@@ -563,7 +563,7 @@ export default function App() {
                       </div>
                       <button 
                         onClick={() => { setFilterStartDate(todayForInput); setFilterEndDate(todayForInput); }}
-                        className="bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-xl text-xs font-bold transition-all"
+                        className="bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-xl text-xs font-bold transition-all w-full sm:w-auto"
                       >
                         Clear
                       </button>
@@ -571,7 +571,7 @@ export default function App() {
 
                     <div className="hidden lg:block w-px h-6 bg-slate-200 dark:bg-slate-700 mx-1 shrink-0"></div>
                     
-                    <div className="flex gap-4 text-xs sm:text-sm font-bold bg-white dark:bg-slate-950 px-4 py-1.5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700/60 shrink-0 mx-auto lg:mx-0">
+                    <div className="flex justify-between w-full lg:w-auto gap-4 text-xs sm:text-sm font-bold bg-white dark:bg-slate-950 px-4 py-1.5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700/60 shrink-0 mx-auto lg:mx-0">
                       <span className="text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
                          <ArrowUpRight size={14} strokeWidth={3}/> รับ: ฿{filterInc.toLocaleString()}
                       </span>
@@ -584,11 +584,11 @@ export default function App() {
                 
                 <div className="flex flex-col items-start xl:items-end gap-3 w-full xl:w-auto mt-4 xl:mt-0">
 
-                  <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 bg-slate-50/50 dark:bg-slate-900/20 p-2 rounded-2xl border border-slate-100 dark:border-slate-800/60 w-fit xl:w-auto mt-2 justify-start xl:justify-end">
+                  <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-slate-50/50 dark:bg-slate-900/20 p-2 rounded-2xl border border-slate-100 dark:border-slate-800/60 w-full xl:w-auto mt-2 justify-start xl:justify-end">
                     <select 
                       value={itemsPerPage} 
                       onChange={(e) => setItemsPerPage(Number(e.target.value))}
-                      className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 text-sm font-bold rounded-xl px-3 py-1.5 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
+                      className="w-full sm:w-auto bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 text-sm font-bold rounded-xl px-3 py-1.5 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
                     >
                       <option value={5}>5 รายการ</option>
                       <option value={10}>10 รายการ</option>
@@ -596,7 +596,7 @@ export default function App() {
                       <option value={50}>50 รายการ</option>
                     </select>
 
-                    <div className="relative flex-grow sm:flex-grow-0">
+                    <div className="relative w-full sm:w-auto sm:flex-grow-0">
                       <Search size={16} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
                       <input 
                         type="text" 
@@ -614,26 +614,26 @@ export default function App() {
                 {currentTxs.length > 0 ? currentTxs.map((tx) => {
                   const isInc = tx.type === 'income';
                   return (
-                    <div key={tx.id} className="group bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/60 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors rounded-2xl p-4 flex items-center justify-between shadow-sm hover:shadow-md">
-                      <div className="flex items-center space-x-4 overflow-hidden">
-                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 ${isInc ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-500/20' : 'bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-400 border border-rose-100 dark:border-rose-500/20'}`}>
-                          {isInc ? <ArrowUpRight size={26} strokeWidth={2.5} /> : <ArrowDownRight size={26} strokeWidth={2.5} />}
+                    <div key={tx.id} className="group bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/60 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors rounded-2xl p-4 flex items-center justify-between shadow-sm hover:shadow-md gap-2">
+                      <div className="flex items-center space-x-3 sm:space-x-4 overflow-hidden flex-1 min-w-0">
+                        <div className={`w-12 h-12 flex-shrink-0 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center ${isInc ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-500/20' : 'bg-rose-50 text-rose-600 dark:bg-rose-500/10 dark:text-rose-400 border border-rose-100 dark:border-rose-500/20'}`}>
+                          {isInc ? <ArrowUpRight size={22} className="sm:w-6 sm:h-6" strokeWidth={2.5} /> : <ArrowDownRight size={22} className="sm:w-6 sm:h-6" strokeWidth={2.5} />}
                         </div>
-                        <div className="flex flex-col truncate justify-center">
-                          <div className="mb-1.5 flex items-center gap-2">
-                            <span className="text-xs font-bold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/20 border border-indigo-100 dark:border-indigo-500/20 px-2.5 py-1 rounded-md max-w-full truncate">{tx.category}</span>
+                        <div className="flex flex-col min-w-0 justify-center">
+                          <div className="mb-1 sm:mb-1.5 flex items-center gap-2">
+                            <span className="text-[10px] sm:text-xs font-bold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/20 border border-indigo-100 dark:border-indigo-500/20 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md truncate max-w-[120px] sm:max-w-full">{tx.category}</span>
                             {/* Keep mini date indicator just in case for range search */}
-                            {filterStartDate !== filterEndDate && <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 px-1 truncate">{tx.date.split('-').reverse().join('-')}</span>}
+                            {filterStartDate !== filterEndDate && <span className="text-[10px] sm:text-xs font-bold text-slate-400 dark:text-slate-500 px-1 truncate flex-shrink-0">{tx.date.split('-').reverse().join('-')}</span>}
                           </div>
-                          <h4 className="font-bold text-slate-800 dark:text-slate-200 text-lg md:text-xl truncate">{tx.title}</h4>
+                          <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm sm:text-lg md:text-xl truncate text-wrap leading-tight max-h-[40px] overflow-hidden">{tx.title}</h4>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-4 flex-shrink-0 ml-3">
-                        <div className={`font-black text-xl md:text-2xl text-right tracking-tight ${isInc ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
+                      <div className="flex items-center space-x-1 sm:space-x-4 flex-shrink-0 ml-1 sm:ml-3">
+                        <div className={`font-black text-base sm:text-xl md:text-2xl text-right tracking-tight ${isInc ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}`}>
                           {isInc ? '+' : '-'}฿{tx.amount.toLocaleString()}
                         </div>
-                        <button onClick={() => handleDeleteTransaction(tx.id)} className="text-slate-300 dark:text-slate-600 hover:text-rose-600 dark:hover:text-rose-500 opacity-0 group-hover:opacity-100 transition-opacity p-2">
-                          <Trash2 size={20}/>
+                        <button onClick={() => handleDeleteTransaction(tx.id)} className="text-slate-300 dark:text-slate-600 hover:text-rose-600 dark:hover:text-rose-500 opacity-0 group-hover:opacity-100 transition-opacity p-1 sm:p-2">
+                          <Trash2 size={16} className="sm:w-5 sm:h-5"/>
                         </button>
                       </div>
                     </div>
@@ -680,8 +680,8 @@ export default function App() {
       {/* 🚀 Modal Export CSV */}
       {isExportModalOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in">
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-2xl w-full max-w-sm overflow-hidden relative animate-in zoom-in-95 border border-slate-100 dark:border-slate-800">
-            <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-950">
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-2xl w-full max-w-sm max-h-[90vh] flex flex-col overflow-hidden relative animate-in zoom-in-95 border border-slate-100 dark:border-slate-800">
+            <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-950 shrink-0">
               <h2 className="text-xl font-black text-slate-800 dark:text-white flex items-center gap-2">
                 <Download size={20} className="text-indigo-600 dark:text-indigo-400" /> Export ข้อมูล Excel
               </h2>
@@ -689,7 +689,7 @@ export default function App() {
                 <X size={18} strokeWidth={2.5} />
               </button>
             </div>
-            <div className="p-6 space-y-5">
+            <div className="p-6 space-y-5 overflow-y-auto custom-scrollbar">
               <div>
                 <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">วันเริ่มต้น</label>
                 <input type="date" value={exportStart} onChange={(e)=>setExportStart(e.target.value)} className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-base rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-bold" />
@@ -712,8 +712,8 @@ export default function App() {
       {/* 🚀 Modal บันทึกบัญชี (Transaction Form) */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in">
-          <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-2xl w-full max-w-md overflow-hidden relative animate-in zoom-in-95 border border-slate-100 dark:border-slate-800/80">
-            <div className={`p-8 text-white text-center relative ${modalType === 'income' ? 'bg-emerald-600 dark:bg-emerald-700' : 'bg-rose-600 dark:bg-rose-700'}`}>
+          <div className="bg-white dark:bg-slate-900 rounded-[2rem] shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden relative animate-in zoom-in-95 border border-slate-100 dark:border-slate-800/80">
+            <div className={`p-8 text-white text-center relative shrink-0 ${modalType === 'income' ? 'bg-emerald-600 dark:bg-emerald-700' : 'bg-rose-600 dark:bg-rose-700'}`}>
               <button onClick={() => setIsModalOpen(false)} className="absolute top-5 right-5 bg-black/10 hover:bg-black/20 rounded-full p-2.5 transition-colors z-50">
                 <X size={20} strokeWidth={3} />
               </button>
@@ -732,7 +732,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="p-6 space-y-5 overflow-y-auto custom-scrollbar">
               <div>
                 <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">หมวดหมู่</label>
                 <div className="relative">
